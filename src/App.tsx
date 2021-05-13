@@ -1,4 +1,5 @@
 import React, {FC} from 'react'
+import {Container} from '@material-ui/core'
 import {makeStyles, ThemeProvider} from '@material-ui/core/styles'
 
 import Icons from './components/Icons'
@@ -15,10 +16,12 @@ const App: FC = () => {
   const classes = useStyles()
 
   return (
-    <ThemeProvider theme={theme}>
-      <Intro />
-      <Icons />
-    </ThemeProvider>
+    <Container className={classes.body}>
+      <ThemeProvider theme={theme}>
+        <Intro />
+        <Icons />
+      </ThemeProvider>
+    </Container>
   )
 }
 
