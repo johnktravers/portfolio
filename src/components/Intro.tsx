@@ -1,13 +1,14 @@
 import React, {FC} from 'react'
 import {Container, Typography} from '@material-ui/core'
 import {makeStyles} from '@material-ui/core/styles'
+import theme from '../styles/theme'
 
 const useStyles = makeStyles({
     message: {
         fontFamily: 'monospace'
     },
     name: {
-        color: '#33a1a3'
+        color: theme.palette.info.light
     }
 })
 

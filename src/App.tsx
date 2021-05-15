@@ -8,8 +8,7 @@ import Navbar from './components/Navbar'
 import theme from './styles/theme'
 
 const useStyles = makeStyles({
-  body: {
-    height: '100vh'
+  appContainer: {
   }
 })
 
@@ -17,7 +16,7 @@ const App: FC = () => {
   const classes = useStyles()
 
   return (
-    <Container className={classes.body}>
+    <Container className={classes.appContainer}>
       <ThemeProvider theme={theme}>
         <Navbar />
         <Intro />
