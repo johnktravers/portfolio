@@ -5,8 +5,10 @@ import {
     MobileIcon,
     Nav,
     NavbarContainer,
+    NavBtn,
+    NavBtnLink,
     NavItem,
-    NavLinks,
+    NavLink,
     NavLogo,
     NavMenu
 } from './NavbarElements'
@@ -21,9 +23,21 @@ const Navbar: FC = () => (
                 </MobileIcon>
                 <NavMenu>
                     <NavItem>
-                        <NavLinks to='about' />
+                        <NavLink to='about'>About</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink to='experience'>Experience</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink to='projects'>Projects</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink to='contact'>Contact</NavLink>
                     </NavItem>
                 </NavMenu>
+                <NavBtn>
+                    <NavBtnLink href='#'>Resume</NavBtnLink>
+                </NavBtn>
             </NavbarContainer>
         </Nav>
     </>
