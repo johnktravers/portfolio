@@ -1,11 +1,11 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 
 import Home from './pages'
 
 const App: FC = () => (
-    <>
-      <Home />
-    </>
+  <>
+    <Home />
+  </>
 )
 
 export default App
