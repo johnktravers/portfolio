@@ -1,35 +1,44 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 
 import {
-    CloseIcon,
-    Icon,
-    SidebarBtnWrap,
-    SidebarContainer,
-    SidebarLink,
-    SidebarMenu,
-    SidebarRoute,
-    SidebarWrapper
+  CloseIcon,
+  Icon,
+  SidebarBtnWrap,
+  SidebarContainer,
+  SidebarLink,
+  SidebarMenu,
+  SidebarRoute,
+  SidebarWrapper,
 } from './SidebarElements'
 
-const Sidebar: FC = () => (
+type SidebarProps = {
+  isOpen: boolean
+  toggleOpen: () => void
+}
+
+const Sidebar: FC<SidebarProps> = (props) => {
+  const { isOpen, toggleOpen } = props
+
+  return (
     <>
-        <SidebarContainer>
-            <Icon>
-                <CloseIcon />
-            </Icon>
-            <SidebarWrapper>
-                <SidebarMenu>
-                    <SidebarLink to='about'>About</SidebarLink>
-                    <SidebarLink to='experience'>Experience</SidebarLink>
-                    <SidebarLink to='projects'>Projects</SidebarLink>
-                    <SidebarLink to='contact'>Contact</SidebarLink>
-                </SidebarMenu>
-                <SidebarBtnWrap>
-                    <SidebarRoute href='#'>Resume</SidebarRoute>
-                </SidebarBtnWrap>
-            </SidebarWrapper>
-        </SidebarContainer>
+      <SidebarContainer isOpen={isOpen} onClick={toggleOpen}>
+        <Icon>
+          <CloseIcon onClick={toggleOpen} />
+        </Icon>
+        <SidebarWrapper>
+          <SidebarMenu>
+            <SidebarLink to='about' onClick={toggleOpen}>About</SidebarLink>
+            <SidebarLink to='experience' onClick={toggleOpen}>Experience</SidebarLink>
+            <SidebarLink to='projects' onClick={toggleOpen}>Projects</SidebarLink>
+            <SidebarLink to='contact' onClick={toggleOpen}>Contact</SidebarLink>
+          </SidebarMenu>
+          <SidebarBtnWrap>
+            <SidebarRoute href='#'>Resume</SidebarRoute>
+          </SidebarBtnWrap>
+        </SidebarWrapper>
+      </SidebarContainer>
     </>
-)
+  )
+}
 
 export default Sidebar
